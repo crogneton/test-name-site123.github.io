@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вибрация с паузами</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="startVibration()">Запустить вибрацию</button>
+
+  <script>
+    function startVibration() {
+      // Паттерн вибрации: вибрация 300 мс, пауза 500 мс, вибрация 300 мс, пауза 500 мс, вибрация 300 мс
+      const pattern = [300, 500, 300, 500, 300];
+
+      // Проверяем, поддерживается ли вибрация
+      if ("vibrate" in navigator) {
+        navigator.vibrate(pattern); // Запускаем вибрацию по паттерну
+      } else {
+        alert("Вибрация не поддерживается на этом устройстве.");
+      }
+    }
+  </script>
+</body>
+</html>
