@@ -29,32 +29,22 @@
   </style>
 </head>
 <body>
-  <button onclick="startVibration()">Запустить вибрацию</button>
+  <button onclick="startVibration()">Запустить вибрацию!</button>
 
   <script>
     function startVibration() {
       // Паттерн вибрации: вибрация 300 мс, пауза 500 мс, вибрация 300 мс, пауза 500 мс, вибрация 300 мс
-      const pattern = [300, 500, 300, 500, 300];
+      const pattern = [10, 500, 50, 500, 100, 500, 200, 500, 300];
 
       // Проверяем, поддерживается ли вибрация
       if ("vibrate" in navigator) {
         navigator.vibrate(pattern); // Запускаем вибрацию по паттерну
-      } else {
-        alert("Вибрация не поддерживается на этом устройстве.");
       }
     }
   </script>
 
-<audio controls>
-        <source src="https://www.dropbox.com/scl/fi/axw80xzu7f4v0rsty6olt/SteosVoice-436954.mp3?dl=1" type="audio/mpeg">
-        Ваш браузер не поддерживает элемент <code>audio</code>.
-    </audio>
-
-<audio controls>
-        <source src="https://www.dropbox.com/scl/fi/axw80xzu7f4v0rsty6olt/SteosVoice-436954.mp3?e=1" type="audio/mpeg">
-        Ваш браузер не поддерживает элемент <code>audio</code>.
-    </audio>
 
   
 </body>
 </html>
+
