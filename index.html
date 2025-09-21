@@ -29,12 +29,35 @@
   </style>
 </head>
 <body>
-  <button onclick="startVibration()">Запустить вибрацию!</button>
+  Запустить вибрацию:<br>
+  <button onclick="startVibration()">[10, 500, 50, 500, 100, 500, 200, 500, 300]</button>
+  <button onclick="startVibration2()">[10, 500, 10, 500, 10, 500, 10, 500, 10, 500]</button>
+  <button onclick="startVibration3()">[50, 500, 50, 500, 50, 500, 50, 500, 50, 500]</button>
 
   <script>
     function startVibration() {
       // Паттерн вибрации: вибрация 300 мс, пауза 500 мс, вибрация 300 мс, пауза 500 мс, вибрация 300 мс
       const pattern = [10, 500, 50, 500, 100, 500, 200, 500, 300];
+
+      // Проверяем, поддерживается ли вибрация
+      if ("vibrate" in navigator) {
+        navigator.vibrate(pattern); // Запускаем вибрацию по паттерну
+      }
+    }
+
+    function startVibration2() {
+      // Паттерн вибрации: вибрация 300 мс, пауза 500 мс, вибрация 300 мс, пауза 500 мс, вибрация 300 мс
+      const pattern = [10, 500, 10, 500, 10, 500, 10, 500, 10, 500];
+
+      // Проверяем, поддерживается ли вибрация
+      if ("vibrate" in navigator) {
+        navigator.vibrate(pattern); // Запускаем вибрацию по паттерну
+      }
+    }
+    
+    function startVibration3() {
+      // Паттерн вибрации: вибрация 300 мс, пауза 500 мс, вибрация 300 мс, пауза 500 мс, вибрация 300 мс
+      const pattern = [50, 500, 50, 500, 50, 500, 50, 500, 50, 500];
 
       // Проверяем, поддерживается ли вибрация
       if ("vibrate" in navigator) {
@@ -47,4 +70,5 @@
   
 </body>
 </html>
+
 
