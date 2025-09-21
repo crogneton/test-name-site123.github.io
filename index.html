@@ -29,10 +29,11 @@
   </style>
 </head>
 <body>
-  Запустить вибрацию:<br>
-  <button onclick="startVibration()">[10, 500, 50, 500, 100, 500, 200, 500, 300]</button>
-  <button onclick="startVibration2()">[10, 500, 10, 500, 10, 500, 10, 500, 10, 500]</button>
-  <button onclick="startVibration3()">[50, 500, 50, 500, 50, 500, 50, 500, 50, 500]</button>
+  Запустить вибрацию:<br><br>
+  <button onclick="startVibration()">[10, 500, 50, 500, 100, 500, 200, 500, 300]</button><br>
+  <button onclick="startVibration2()">[10, 500, 10, 500, 10, 500, 10, 500, 10, 500]</button><br>
+  <button onclick="startVibration3()">[50, 500, 50, 500, 50, 500, 50, 500, 50, 500]</button><br>
+  <button onclick="startVibration4()">[50]</button><br>
 
   <script>
     function startVibration() {
@@ -64,11 +65,22 @@
         navigator.vibrate(pattern); // Запускаем вибрацию по паттерну
       }
     }
+    
+    function startVibration4() {
+      // Паттерн вибрации: вибрация 300 мс, пауза 500 мс, вибрация 300 мс, пауза 500 мс, вибрация 300 мс
+      const pattern = [50];
+
+      // Проверяем, поддерживается ли вибрация
+      if ("vibrate" in navigator) {
+        navigator.vibrate(pattern); // Запускаем вибрацию по паттерну
+      }
+    }
   </script>
 
 
   
 </body>
 </html>
+
 
 
